@@ -5,6 +5,10 @@ github.com/Masterminds/semver/v3
 # github.com/Masterminds/sprig/v3 v3.2.0
 ## explicit
 github.com/Masterminds/sprig/v3
+# github.com/dlclark/regexp2 v1.4.0
+## explicit
+github.com/dlclark/regexp2
+github.com/dlclark/regexp2/syntax
 # github.com/errata-ai/ini v1.63.0
 ## explicit
 github.com/errata-ai/ini

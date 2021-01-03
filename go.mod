@@ -4,6 +4,7 @@ go 1.15
 
 require (
 	github.com/Masterminds/sprig/v3 v3.2.0
+	github.com/dlclark/regexp2 v1.4.0
 	github.com/errata-ai/ini v1.63.0
 	github.com/gobwas/glob v0.2.3
 	github.com/jdkato/prose v1.2.1
