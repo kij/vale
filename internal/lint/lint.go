@@ -1,18 +1,17 @@
 package lint
 
 import (
-	"errors"
 	"net/http"
 	"os"
 	"path/filepath"
 	"strings"
 
+	//"io/fs" use fs.WalkDir instead of godirwalk. -- disabled for now TODO
+
 	"github.com/errata-ai/vale/v2/internal/check"
 	"github.com/errata-ai/vale/v2/internal/core"
 	"github.com/errata-ai/vale/v2/internal/nlp"
 	"github.com/errata-ai/vale/v2/pkg/glob"
-	"github.com/karrick/godirwalk"
-	"github.com/remeh/sizedwaitgroup"
 )
 
 // A Linter lints a File.
@@ -54,6 +53,7 @@ func (l *Linter) LintString(src string) ([]*core.File, error) {
 }
 
 // Lint src according to its format.
+/*
 func (l *Linter) Lint(input []string, pat string) ([]*core.File, error) {
 	var linted []*core.File
 
@@ -92,10 +92,10 @@ func (l *Linter) Lint(input []string, pat string) ([]*core.File, error) {
 	l.teardown()
 	return linted, nil
 }
-
+*/
 // lintFiles walks the `root` directory, creating a new goroutine to lint any
 // file that matches the given glob pattern.
-func (l *Linter) lintFiles(done <-chan core.File, root string) (<-chan lintResult, <-chan error) {
+/*func (l *Linter) lintFiles(done <-chan core.File, root string) (<-chan lintResult, <-chan error) {
 	filesChan := make(chan lintResult)
 	errChan := make(chan error, 1)
 
@@ -143,6 +143,7 @@ func (l *Linter) lintFiles(done <-chan core.File, root string) (<-chan lintResul
 
 	return filesChan, errChan
 }
+*/
 
 // lintFile creates a new `File` from the path `src` and selects a linter based
 // on its format.

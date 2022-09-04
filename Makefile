@@ -52,3 +52,5 @@ test:
 	go test ./internal/core ./internal/lint ./internal/check ./internal/nlp ./pkg/glob
 	cd testdata && cucumber --format progress && cd -
 
+wasm:
+	GOOS=js GOARCH=wasm go build -o vale.wasm ./wasm.go

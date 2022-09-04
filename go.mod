@@ -10,14 +10,12 @@ require (
 	github.com/jdkato/prose v1.2.1
 	github.com/jdkato/regexp v0.1.0
 	github.com/jdkato/titlecase v0.0.0-20220120021253-0158ddd948b8
-	github.com/karrick/godirwalk v1.16.1
 	github.com/mholt/archiver v3.1.1+incompatible
 	github.com/mitchellh/mapstructure v1.4.0
 	github.com/niklasfasching/go-org v1.6.5
 	github.com/olekukonko/tablewriter v0.0.4
 	github.com/otiai10/copy v1.7.0
 	github.com/pterm/pterm v0.12.33
-	github.com/remeh/sizedwaitgroup v1.0.0
 	github.com/spf13/cast v1.3.1
 	github.com/spf13/pflag v1.0.5
 	github.com/yuin/goldmark v1.4.12

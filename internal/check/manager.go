@@ -10,7 +10,6 @@ import (
 	"github.com/errata-ai/vale/v2/internal/core"
 	"github.com/errata-ai/vale/v2/internal/nlp"
 	"github.com/errata-ai/vale/v2/internal/rule"
-	"github.com/karrick/godirwalk"
 )
 
 // Manager controls the loading and validating of the check extension points.
@@ -113,6 +112,7 @@ func (mgr *Manager) AssignNLP(f *core.File) nlp.NLPInfo {
 	}
 }
 
+/*
 func (mgr *Manager) addStyle(path string) error {
 	return godirwalk.Walk(path, &godirwalk.Options{
 		Callback: func(fp string, de *godirwalk.Dirent) error {
@@ -126,6 +126,7 @@ func (mgr *Manager) addStyle(path string) error {
 		FollowSymbolicLinks: true,
 	})
 }
+*/
 
 func (mgr *Manager) addRuleFromSource(name, path string) error {
 	if strings.HasSuffix(name, ".yml") {
@@ -232,9 +233,9 @@ func (mgr *Manager) loadStyles(styles []string) error {
 				need = append(need, style)
 				continue
 			}
-			if err := mgr.addStyle(p); err != nil {
+			/*if err := mgr.addStyle(p); err != nil {
 				return err
-			}
+			} */
 			found = append(found, style)
 		}
 	}

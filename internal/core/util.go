@@ -12,7 +12,6 @@ import (
 
 	"github.com/errata-ai/vale/v2/internal/nlp"
 	"github.com/jdkato/regexp"
-	"github.com/karrick/godirwalk"
 )
 
 var defaultIgnoreDirectories = []string{
@@ -285,22 +284,22 @@ func loadVocab(root string, cfg *Config) error {
 	if target == "" {
 		return NewE100("vocab", fmt.Errorf("'%s' does not exist", root))
 	}
-
-	err := godirwalk.Walk(target, &godirwalk.Options{
-		Callback: func(fp string, de *godirwalk.Dirent) error {
-			name := de.Name()
-			if name == "accept.txt" {
-				return cfg.AddWordListFile(fp, true)
-			} else if name == "reject.txt" {
-				return cfg.AddWordListFile(fp, false)
-			}
-			return nil
-		},
-		Unsorted:            true,
-		AllowNonDirectory:   true,
-		FollowSymbolicLinks: true})
-
-	return err
+	/*
+		err := godirwalk.Walk(target, &godirwalk.Options{
+			Callback: func(fp string, de *godirwalk.Dirent) error {
+				name := de.Name()
+				if name == "accept.txt" {
+					return cfg.AddWordListFile(fp, true)
+				} else if name == "reject.txt" {
+					return cfg.AddWordListFile(fp, false)
+				}
+				return nil
+			},
+			Unsorted:            true,
+			AllowNonDirectory:   true,
+			FollowSymbolicLinks: true})
+	*/
+	return nil
 }
 
 func TextToContext(text string, meta *nlp.NLPInfo) []nlp.TaggedWord {

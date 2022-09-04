@@ -226,6 +226,7 @@ func loadConfig(names, paths []string) string {
 				dir = filepath.Dir(dir)
 			}
 			for _, name := range names {
+				fmt.Printf("Searching for Config :%s, %s\n", name, dir)
 				loc := path.Join(dir, name)
 				if FileExists(loc) && !IsDir(loc) {
 					configPath = loc
